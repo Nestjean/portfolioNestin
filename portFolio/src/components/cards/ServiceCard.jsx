@@ -7,7 +7,7 @@ export default function ServiceCard({ icon: Icon, title, description }) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="group rounded-2xl border border-white/10 bg-bg-surface p-6 transition-colors duration-300 hover:border-violet-400/50"
+      className="group rounded-2xl border border-border bg-bg-surface p-6 transition-colors duration-300 hover:border-violet-400/50"
     >
       <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/10 text-violet-300 transition-colors duration-300 group-hover:bg-violet-500/20">
         <Icon className="h-5 w-5" aria-hidden="true" />

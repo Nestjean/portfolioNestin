@@ -14,7 +14,7 @@ export default function ContactItem({ icon: Icon, label, value, href }) {
   if (href) {
     return (
       <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}
-        className="-m-2 flex items-center gap-4 rounded-xl p-2 transition-colors duration-200 hover:bg-white/5">
+        className="-m-2 flex items-center gap-4 rounded-xl p-2 transition-colors duration-200 hover:bg-overlay">
         {content}
       </a>
     );

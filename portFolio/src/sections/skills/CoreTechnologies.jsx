@@ -4,8 +4,11 @@ import { coreTechnologies } from '../../data/skills';
 import { fallbackTechIcon, techIconMap } from '../../data/techIcons';
 import { staggerContainer } from '../../animations/variants/stagger';
 import { fadeInUp } from '../../animations/variants/fadeIn';
+import useLanguage from '../../context/useLanguage';
 
 export default function CoreTechnologies() {
+  const { t } = useLanguage();
+
   return (
     <motion.section
       initial="hidden"
@@ -15,10 +18,10 @@ export default function CoreTechnologies() {
       className="px-6 py-20 md:px-10"
     >
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-        <SectionTitle eyebrow="Core Technologies" title="What I Reach For Most" align="center" />
+        <SectionTitle eyebrow={t('skills.coreEyebrow')} title={t('skills.coreTitle')} align="center" />
         <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-3">
           {coreTechnologies.map((tech) => (
-            <span key={tech} className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1.5 text-xs font-medium tracking-wide text-ink-400">
+            <span key={tech} className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs font-medium tracking-wide text-ink-400">
               <i className={`${techIconMap[tech] ?? fallbackTechIcon} text-base`} aria-hidden="true" />
               {tech}
             </span>

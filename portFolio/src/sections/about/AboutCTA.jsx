@@ -6,6 +6,7 @@ import { fadeInUp } from '../../animations/variants/fadeIn';
 import { staggerContainer } from '../../animations/variants/stagger';
 
 export default function AboutCTA() {
+  const { t } = useLanguage();
   return (
     <motion.section
       initial="hidden"
@@ -19,19 +20,11 @@ export default function AboutCTA() {
         aria-hidden="true"
       />
 
-      <motion.h2 variants={fadeInUp} className="font-display text-3xl font-bold text-ink-100 sm:text-4xl">
-        Let's Build Something Meaningful
-      </motion.h2>
-      <motion.p variants={fadeInUp} className="mx-auto mt-4 max-w-md text-base text-ink-400">
-        Take a look at what I've built so far, or reach out if you'd like to work together.
-      </motion.p>
+      <motion.h2 variants={fadeInUp} className="font-display text-3xl font-bold text-ink-100 sm:text-4xl">{t('about.ctaTitle')}</motion.h2>
+      <motion.p variants={fadeInUp} className="mx-auto mt-4 max-w-md text-base text-ink-400">{t('about.ctaDescription')}</motion.p>
       <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <Button to="/projects" variant="primary" icon={ArrowRightIcon}>
-          View Projects
-        </Button>
-        <Button to="/contact" variant="secondary" icon={Send}>
-          Contact Me
-        </Button>
+        <Button to="/projects" variant="primary" icon={ArrowRightIcon}>{t('common.viewProjects')}</Button>
+        <Button to="/contact" variant="secondary">{t('common.contactMe')}</Button>
       </motion.div>
     </motion.section>
   );

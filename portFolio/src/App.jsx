@@ -5,9 +5,23 @@ import heroImg from './assets/hero.png'
 import './styles/App.css'
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
+import ThemeProvider from './context/ThemeProvider';
+import LanguageProvider from './context/LanguageProvider';
+import Preloader from './components/ui/Preloader';
 
 function App() {
-  return <RouterProvider router={router} />;
+  return ( 
+   <ThemeProvider>
+      <LanguageProvider>
+        <Preloader />
+  <RouterProvider router={router} /> 
+  </LanguageProvider>
+    </ThemeProvider>
+
+
+
+
+    );
 }
 
 export default App

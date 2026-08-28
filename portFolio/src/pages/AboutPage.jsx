@@ -6,7 +6,7 @@ import BeyondCoding from '../sections/about/BeyondCoding';
 export default function AboutPage() {
   return (
     <>
-      <AboutHero /> 
+      <AboutHero />  
       <JourneyTimeline /> 
       <BeyondCoding />
     </>

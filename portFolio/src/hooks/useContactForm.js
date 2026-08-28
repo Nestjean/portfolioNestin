@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { validateName, validateEmail, validateSubject, validateMessage } from '../utils/validators';
 import { sendContactMessage } from '../services/api/contactService';
+import useLanguage from '../context/useLanguage';
 
-// `company` is the honeypot field — real visitors never see or fill it in.
 const initialValues = { name: '', email: '', subject: '', message: '', company: '' };
 const validators = { name: validateName, email: validateEmail, subject: validateSubject, message: validateMessage };
 
 export default function useContactForm() {
+  const { t } = useLanguage();
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [status, setStatus] = useState('idle');
 
   const handleChange = (field) => (event) => {
     const { value } = event.target;
@@ -20,8 +21,8 @@ export default function useContactForm() {
   const validateAll = () => {
     const nextErrors = {};
     Object.keys(validators).forEach((field) => {
-      const message = validators[field](values[field]);
-      if (message) nextErrors[field] = message;
+      const key = validators[field](values[field]);
+      if (key) nextErrors[field] = t(key);
     });
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
@@ -31,7 +32,6 @@ export default function useContactForm() {
     event.preventDefault();
 
     if (values.company) {
-      // Bot filled the honeypot — pretend success, send nothing.
       setStatus('success');
       return;
     }

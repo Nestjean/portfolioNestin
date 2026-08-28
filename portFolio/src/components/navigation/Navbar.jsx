@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom';
 import NavLink from './NavLink';
 import MobileMenu from './MobileMenu';
 import Button from '../ui/Button';
+import ThemeToggle from '../ui/ThemeToggle';
+import LanguageToggle from '../ui/LanguageToggle';
 import { MenuIcon, ArrowRightIcon } from '../icons';
 import { navLinks } from '../../constants/navLinks';
 import { siteConfig } from '../../constants/siteConfig';
 import useScrollPosition from '../../hooks/useScrollPosition';
+import useLanguage from '../../context/useLanguage';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const scrollY = useScrollPosition();
   const isScrolled = scrollY > 8;
+  const { t } = useLanguage();
 
   return (
     <header
@@ -28,14 +32,16 @@ export default function Navbar() {
         <ul className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <li key={link.path}>
-              <NavLink to={link.path} label={link.label} icon={link.icon} />
+              <NavLink to={link.path} translationKey={link.key}  icon={link.icon} />
             </li>
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-3 md:flex">
+          <LanguageToggle />
+          <ThemeToggle />
           <Button to="/contact" variant="secondary" icon={ArrowRightIcon}>
-            Let's talk
+            {t('nav.letsTalk')}
           </Button>
         </div>
 

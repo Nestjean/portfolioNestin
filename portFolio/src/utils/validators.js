@@ -1,26 +1,25 @@
-// Client-side checks for fast feedback. The server re-validates everything
-// independently — client validation is never trusted on its own.
-
+// Returns a translation key (or '' when valid) instead of a hardcoded
+// message, so the same validation logic works in both languages.
 export function validateName(value) {
-  if (!value.trim()) return 'Please enter your name.';
-  if (value.trim().length < 2) return 'Please enter your full name.';
+  if (!value.trim()) return 'contact.errors.nameRequired';
+  if (value.trim().length < 2) return 'contact.errors.nameShort';
   return '';
 }
 
 export function validateEmail(value) {
-  if (!value.trim()) return 'Please enter your email address.';
+  if (!value.trim()) return 'contact.errors.emailRequired';
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(value.trim())) return 'Please enter a valid email address.';
+  if (!emailPattern.test(value.trim())) return 'contact.errors.emailInvalid';
   return '';
 }
 
 export function validateSubject(value) {
-  if (!value.trim()) return 'Please enter a subject.';
+  if (!value.trim()) return 'contact.errors.subjectRequired';
   return '';
 }
 
 export function validateMessage(value) {
-  if (!value.trim()) return 'Please enter a message.';
-  if (value.trim().length < 10) return 'Please add a little more detail to your message.';
+  if (!value.trim()) return 'contact.errors.messageRequired';
+  if (value.trim().length < 10) return 'contact.errors.messageShort';
   return '';
 }

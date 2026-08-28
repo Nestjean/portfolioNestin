@@ -1,6 +1,6 @@
 export const beyondCodingItems = [
-  { icon: 'cpu', label: 'Technology' },
-  { icon: 'film', label: 'Anime' },
-  { icon: 'trophy', label: 'Sports' },
-  { icon: 'compass', label: 'Learning' },
+  { icon: 'cpu', label: { en: 'Technology', fr: 'Technologie' } },
+  { icon: 'film', label: { en: 'Anime', fr: 'Anime' } },
+  { icon: 'trophy', label: { en: 'Sports', fr: 'Sport' } },
+  { icon: 'compass', label: { en: 'Learning', fr: 'Apprentissage' } },
 ];

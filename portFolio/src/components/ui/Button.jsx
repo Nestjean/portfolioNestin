@@ -7,7 +7,7 @@ const variants = {
   primary:
     'bg-violet-500 text-ink-100 hover:bg-violet-400 hover:shadow-[0_0_24px_4px_rgba(124,92,255,0.45)] active:scale-[0.98]',
   secondary:
-    'border border-white/15 text-ink-100 hover:border-violet-400 hover:bg-white/5 active:scale-[0.98]',
+    'border border-border-strong text-ink-100 hover:border-violet-400 hover:bg-overlay strong:scale-[0.98]',
 };
 
 export default function Button({ to, href, onClick, variant = 'primary', icon: Icon, children, ...props }) {

@@ -1,7 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { CheckIcon, CloseIcon } from '../icons';
+import useLanguage from '../../context/useLanguage';
 
 export default function FormStatusMessage({ status }) {
+  const { t } = useLanguage();
   const isSuccess = status === 'success';
   const isError = status === 'error';
 
@@ -19,11 +21,7 @@ export default function FormStatusMessage({ status }) {
           }`}
         >
           <span className="mt-0.5">{isSuccess ? <CheckIcon className="h-4 w-4" /> : <CloseIcon className="h-4 w-4" />}</span>
-          <p>
-            {isSuccess
-              ? "Your message has been sent successfully. I'll get back to you as soon as possible."
-              : 'Something went wrong while sending your message. Please try again.'}
-          </p>
+          <p>{isSuccess ? t('contact.form.success') : t('contact.form.error')}</p>
         </motion.div>
       )}
     </AnimatePresence>

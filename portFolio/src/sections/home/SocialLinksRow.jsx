@@ -15,7 +15,7 @@ export default function SocialLinksRow() {
             target="_blank"
             rel="noreferrer"
             aria-label={social.label}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-ink-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-400 hover:text-violet-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-ink-400 transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-400 hover:text-violet-300"
           >
             <Icon className="h-4 w-4" />
           </a>
