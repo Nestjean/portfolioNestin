@@ -34,7 +34,7 @@ export default function AboutHero() {
           />
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-bg-surface">
             <img
-              src="/src/assets/nestin.jpg"
+              src="/images/profil/nestin.jpg"
               alt="Portrait of Your Name, web developer"
               className="aspect-[4/5] w-full object-cover"
               onError={(event) => {
