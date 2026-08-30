@@ -16,14 +16,14 @@ const listVariants = { visible: { transition: { staggerChildren: 0.06, delayChil
 const itemVariants = { hidden: { opacity: 0, x: 24 }, visible: { opacity: 1, x: 0 } };
 
 export default function MobileMenu({ isOpen, onClose }) {
-  useLockBodyScroll(isOpen);
+  useLockBodyScroll(isOpen); 
 
   return (
     <AnimatePresence>
       {isOpen && (
         <>
           <motion.div
-            className="fixed inset-0 z-40 bg-bg-base/70 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-[60] bg-bg-base/80 backdrop-blur-sm touch-none md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -37,7 +37,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed right-0 top-0 z-50 flex h-full w-[78%] max-w-xs flex-col gap-8 bg-bg-surface p-8 shadow-2xl md:hidden"
+            className="fixed right-0 top-0 z-[61] isolate flex h-full w-[78%] max-w-xs flex-col gap-8 bg-bg-surface p-8 shadow-2xl md:hidden"
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between">
