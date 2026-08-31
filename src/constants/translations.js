@@ -100,7 +100,7 @@ export const translations = {
     },
     skills: {
       badge: 'Mes compétences',
-      heroTitle: 'Technologies que je maîtrise',
+      heroTitle: 'Technologies avec lesquelles je travaille',
       heroDescription: 'Je travaille avec un ensemble varié de technologies en frontend, backend, bases de données et outils de développement, ce qui me permet de construire des applications web complètes et modernes.',
       coreEyebrow: 'Technologies principales',
       coreTitle: "Ce que j'utilise le plus",
